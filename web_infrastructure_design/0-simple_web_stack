@@ -1,0 +1,30 @@
+https://imgur.com/a/8Uc5Vmz
+
+
+Explanation The user types www.foobar.com into their browser.
+DNS translates www.foobar.com to the server's IP address (8.8.8.8).
+The browser sends an HTTP request to the server.
+Nginx (web server) receives the request and forwards it to the application server.
+The application server processes the request, possibly interacting with the MySQL database.
+The application server generates the response (HTML web page) and sends it back to Nginx.
+Nginx sends the response to the user's browser.
+The browser displays the web page.
+
+1. Server: Physical or virtual machine hosting all components.
+
+2. Domain name System: A representation of the server's IP address.
+
+3. DNS 'www' record: Type A record that maps the 'www' subdomain to the server's IP address.
+
+4. Web server (Nginx): Handles incoming HTTP requests and serves static files (HTML, CSS, images).
+
+5. Application Server: Runs the web application code (PHP, Python, etc.) to generate dynamic content.
+
+6. Database (MySQL): Stores the application data (users, articles, etc.).
+
+7. Communication: The server uses TCP/IP to communicate with the user's computer.
+
+Issues with this infrastructure
+SPOF (Single Point of Failure): If the server goes down, the website is inaccessible.
+Maintenance and Deployment: Any maintenance or deployment that requires a server restart will result in a service interruption.
+Scalability: The infrastructure cannot easily handle a sudden increase in traffic.
