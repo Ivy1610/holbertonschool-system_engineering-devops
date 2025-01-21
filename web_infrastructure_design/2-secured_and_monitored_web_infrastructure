@@ -1,1 +1,15 @@
-https://imgur.com/a/secured-monitored-web-infrastructure-k3HOOwD
+https://imgur.com/gallery/2-secured-monitored-web-infrastructure-WC9mWCx
+
+
+## Infrastructure Specifics
+
+- Firewalls: Block unauthorized traffic and protect against attacks.
+- SSL Certificate: Enables encrypted communications between the user and the server, protecting sensitive data.
+- Monitoring Clients: Collect metrics on resource usage, response times, etc., to detect issues and optimize performance.
+- Data Collection: Monitoring clients use agents installed on servers to collect data, which is then sent to the centralized monitoring service.
+- QPS Monitoring: To monitor the QPS (Requests Per Second) of the web server, the monitoring client will collect data on the number of requests processed by the web server per unit of time.
+
+## Persistent Issues
+- SSL Termination at the Load Balancer: This exposes decrypted traffic between the load balancer and the web servers, which can be a security risk if the internal network is not secured.
+- Single MySQL master node: If the master node fails, data writes are not possible, which can lead to service interruption.
+- Homogeneous servers: If all servers have the same components, a vulnerability in one can affect all the others, increasing the risk of a widespread outage.
