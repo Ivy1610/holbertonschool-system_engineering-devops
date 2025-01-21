@@ -1,0 +1,21 @@
+https://imgur.com/gallery/3-scale-up-tyGmHxU
+
+
+These requirements require that the infrastructure be scaled and components be separated to ensure better reliability, performance, and scalability.
+
+1. Add an additional server
+Reason: Adding a server helps distribute the workload and reduce the risk of overload or failure of a single component.
+
+2. Add an additional Load Balancer (HAProxy) configured in a cluster
+Load Balancers distribute incoming requests across multiple servers.
+They improve availability by redirecting requests if a server is down.
+
+By configuring a cluster of Load Balancers (HAProxy), if one Load Balancer fails, the other can continue to operate, thus avoiding a Single Point of Failure (SPOF).
+
+3. Separate components on dedicated servers
+This means that each component of the infrastructure (Web Server, Application Server, Database) must be placed on its own server.
+
+Why separate components? Improved Performance: Each server is optimized for a specific task, reducing resource contention between components.
+For example, the database can consume a lot of memory, which could slow down a shared server.
+Scalability: If a part of the application needs more resources, a dedicated server can simply be added or upgraded.
+Security: Isolating the database on a separate server reduces the risk of data exposure in the event of a compromise of the web or application server.
